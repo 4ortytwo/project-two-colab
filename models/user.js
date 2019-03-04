@@ -9,8 +9,11 @@ const userSchema = new Schema({
     lastName: String, 
     fullName: String,
     specialty: String,
-    dateOfBirth: Date,
+    dateOfBirth: Date, //FIXME: trim the date
     pictureUrl: String,
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
+    //TODO: add timestamps ? display updated date on user's profile page
 });
 
 const User = mongoose.model('users', userSchema);

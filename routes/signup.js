@@ -9,7 +9,7 @@ router.get('/', (req, res)=> {
 
 router.post('/', (req, res)=> {
 
-    const {username, } = req.body
+    // const {username, } = req.body
 
 
     let newUser = {

@@ -18,8 +18,7 @@ var loginRouter         = require('./routes/login');
 var authRouter          = require('./routes/auth');
 var profileRouter       = require('./routes/profile');
 var noPageRouter        = require('./routes/nopage');
-// var createProjectRouter = require('./routes/project-create'); 
-//TODO: ^^^ complete this route and view ^^^
+var createProjectRouter = require('./routes/project-create'); 
 var projectsRouter      = require('./routes/projects');
 var usersRouter         = require('./routes/users');
 
@@ -52,6 +51,7 @@ app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
 app.use('/auth/profile', profileRouter);
 app.use('/projects', projectsRouter);
+app.use('/project-create', createProjectRouter);
 app.use('/users', usersRouter);
 app.use('/*', noPageRouter);//404 handler
 

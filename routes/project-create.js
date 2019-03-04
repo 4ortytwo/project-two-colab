@@ -1,11 +1,22 @@
 const express       = require('express');
-const app           = express();
+const router    = express.Router();
 const Project       = require('../models/project');
+const mongoose      = require('mongoose');
 
-app.get('/', (req, res, next)=> {
-    Project.find({}, (err, queryResults)=> {
-        (err) ? res.status(500).send(err) : res.render('project', {projects: queryResults});
-    });
+router.get('/', (req, res, next)=> {
+    res.render('project-create');
 });
 
-module.exports = app;
+router.post('/', (req, res, next)=> {
+    let newProject = {
+        projectName: req.body.projectName,
+        description: req.body.description,
+        createdBy: mongoose.Types.ObjectId(req.signedCookies.id),
+    };
+
+    Project.create(newProject, (err)=> {
+        err ? res.status(500).send('Project not created') 
+        : res.status(200).render('projects');
+    })
+})
+module.exports = router;
