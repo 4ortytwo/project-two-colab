@@ -8,6 +8,10 @@ router.get('/', (req, res)=> {
 })
 
 router.post('/', (req, res)=> {
+
+    const {username, } = req.body
+
+
     let newUser = {
         username: req.body.username,
         email: req.body.email,
@@ -15,7 +19,8 @@ router.post('/', (req, res)=> {
         lastName: req.body.lastName, 
         specialty: req.body.specialty,
         dateOfBirth: req.body.dateOfBirth,
-        pictureUrl: req.body.pictureUrl
+        pictureUrl: req.body.pictureUrl,
+        specialty: req.body.specialty
     };
     
     bcrypt.hash(req.body.password, 10, function(err, hash) {

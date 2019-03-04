@@ -9,7 +9,8 @@ const userSchema = new Schema({
     lastName: String, 
     specialty: String,
     dateOfBirth: Date,
-    pictureUrl: String
+    pictureUrl: String,
+    specialty: String
 });
 
 const User = mongoose.model('users', userSchema);
