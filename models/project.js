@@ -6,7 +6,8 @@ const projectSchema = new Schema({
     description: String, 
     pictureUrl: String,
     createdBy: {type: Schema.Types.ObjectId, ref: 'users'},
-    createdAt: Date
+    createdAt: Date,
+    updatedAt: Date
 });
 
 const Project = mongoose.model('projects', projectSchema);

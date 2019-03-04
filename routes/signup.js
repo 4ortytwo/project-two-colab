@@ -17,6 +17,7 @@ router.post('/', (req, res)=> {
         email: req.body.email,
         firstName: req.body.firstName, 
         lastName: req.body.lastName, 
+        fullName: `${req.body.firstName} ${req.body.lastName}`,
         specialty: req.body.specialty,
         dateOfBirth: req.body.dateOfBirth,
         pictureUrl: req.body.pictureUrl,

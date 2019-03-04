@@ -1,0 +1,10 @@
+<h1>{{project.projectName}}</h1>
+<h2>Created by: 
+    {{#if project.createdBy.fullName}}
+        {{project.createdBy.fullName}}
+    {{else}}
+        {{project.createdBy.firstName}} {{project.createdBy.lastName}}
+    {{/if}}
+</h2>
+<p>{{project.description}}</p>
+
