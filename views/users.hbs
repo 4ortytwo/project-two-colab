@@ -1,0 +1,19 @@
+{{#each users}}
+<h1>{{#if fullName}}
+    {{fullName}}
+    {{else}}
+    {{firstName}} {{lastName}}
+    {{/if}}
+</h1>
+
+<h2>{{email}}</h2>
+
+<h2>{{specialty}}</h2>
+
+<h3>{{dateOfBirth}}</h3>
+
+{{#if pictureUrl}}
+<img src="{{pictureUrl}}" alt="{{firstName}}'s profile picture">
+{{/if}}
+<br><br>
+{{/each}}

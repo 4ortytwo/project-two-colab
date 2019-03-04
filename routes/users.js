@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express       = require('express');
+const app           = express();
+// const Project       = require('../models/project');
+const User          = require('../models/user');
+const mongoose      = require('mongoose');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
+app.get('/', (req, res, next)=> {
+    User.find({}).then(queryResults=> {
+        res.render('users', {users: queryResults});
+    }).catch(err => {
+        res.status(500).send(err);
+    });
 });
 
-module.exports = router;
+module.exports = app;

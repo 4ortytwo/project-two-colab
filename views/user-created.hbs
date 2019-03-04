@@ -1,0 +1,9 @@
+{{!-- loading animation here --}}
+<h1>You have successfully registered. You are being redirected to your profile now. Please click <a href="/auth/profile">here</a> if you haven't been redirected within 5 seconds.</h1>
+
+<script>
+  setTimeout(function () {
+     // after 2 seconds
+     window.location = "/auth/profile";
+  }, 4000)
+</script>

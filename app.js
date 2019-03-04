@@ -18,15 +18,20 @@ var loginRouter         = require('./routes/login');
 var authRouter          = require('./routes/auth');
 var profileRouter       = require('./routes/profile');
 var noPageRouter        = require('./routes/nopage');
-// var createProjectRouter = require('./routes/project-create');
+// var createProjectRouter = require('./routes/project-create'); 
+//TODO: ^^^ complete this route and view ^^^
 var projectsRouter      = require('./routes/projects');
+var usersRouter         = require('./routes/users');
+
+
+
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-hbs.registerPartials
+hbs.registerPartials(__dirname + 'views/partials');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -47,7 +52,9 @@ app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
 app.use('/auth/profile', profileRouter);
 app.use('/projects', projectsRouter);
+app.use('/users', usersRouter);
 app.use('/*', noPageRouter);//404 handler
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

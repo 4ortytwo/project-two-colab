@@ -18,7 +18,8 @@ router.post('/', (req, res)=> {
                 if(equal) {
                     res.cookie('email', req.body.email, {signed: true}); 
                     res.cookie('username', result.username, {signed: true});
-                    debugger
+                    res.cookie('id', result.id, {signed: true});
+                    //debugger
                     // res.status(200).send('logged in')
                     res.redirect("/auth/profile")
                 } else {

@@ -30,7 +30,7 @@ router.post('/', (req, res)=> {
 
         User.create(newUser, (err)=> {
             err ? res.status(500).send('User not created') 
-            : res.status(200).send('User created');
+            : res.status(200).render('user-created');
         });
     });
 });
