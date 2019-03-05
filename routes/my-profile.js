@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
                 '_id': req.signedCookies.id
             })
             .then(user => {
-                res.render('my-profile', {
+                res.render('profile', {
                     user
                 });
             })
