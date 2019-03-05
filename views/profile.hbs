@@ -1,2 +1,9 @@
-<h1>Hello, {{ username }}</h1>
+<h1>
+    Hello, 
+    {{#if user.fullName}}
+        {{user.fullName}}
+    {{else}}
+        {{user.firstName}} {{user.lastName}}
+    {{/if}}
+</h1>
 

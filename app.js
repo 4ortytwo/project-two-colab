@@ -53,6 +53,7 @@ app.use('/auth/profile', profileRouter);
 app.use('/projects', projectsRouter);
 app.use('/project-create', createProjectRouter);
 app.use('/users', usersRouter);
+
 app.use('/*', noPageRouter);//404 handler
 
 // catch 404 and forward to error handler
