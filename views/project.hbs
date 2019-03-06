@@ -1,5 +1,5 @@
 <h1>{{project.projectName}}</h1>
 <h2>Created by:
-    {{project.createdBy.firstName}} {{project.createdBy.lastName}}
+    <a href='/auth/profile/{{project.createdBy.id}}'>{{project.createdBy.firstName}} {{project.createdBy.lastName}}</a>
 </h2>
 <p>{{project.description}}</p>

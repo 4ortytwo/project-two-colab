@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-  </head>
-  <body>
-    {{> nav}}
-    <a href="/">Home</a>
-    {{{body}}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+  {{!-- <script src="https://momentjs.com/downloads/moment.min.js"></script> --}}
+</head>
+
+<body>
+  {{> nav}}
+  <a href="/">Home</a>
+  {{{body}}}
+</body>
+
 </html>

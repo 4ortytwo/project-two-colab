@@ -7,17 +7,17 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./models/user')
 const hbs = require('hbs');
-
+var moment = require('moment');
+moment().format();
 hbs.registerPartials(__dirname + '/views/partials');
 
 // Routers
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var signupRouter = require('./routes/signup');
 var loginRouter = require('./routes/login');
 var authRouter = require('./routes/auth');
 var profileRouter = require('./routes/profile');
-var noPageRouter = require('./routes/nopage');
+// var noPageRouter = require('./routes/nopage');
 var createProjectRouter = require('./routes/project-create');
 var projectsRouter = require('./routes/projects');
 var usersRouter = require('./routes/users');
@@ -52,7 +52,6 @@ mongoose.connect('mongodb://localhost/colab', {
 //Routers
 app.use('/auth/*', authRouter);
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
 app.use('/auth/profile', profileRouter);
@@ -60,7 +59,7 @@ app.use('/projects', projectsRouter);
 app.use('/project-create', createProjectRouter);
 app.use('/users', usersRouter);
 
-app.use('/*', noPageRouter); //404 handler
+// app.use('/*', noPageRouter); //404 handler
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
