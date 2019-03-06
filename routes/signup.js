@@ -21,14 +21,15 @@ router.post("/", (req, res) => {
     specialty: req.body.specialty
   };
 
-  bcrypt.hash(req.body.password, 10, function(err, hash) {
+  bcrypt.hash(req.body.password, 10, function (err, hash) {
     // Store hash in your password DB.
     newUser.password = hash;
 
     User.create(newUser, err => {
       err
-        ? res.status(500).send("User not created")
-        : res.status(200).render("user-created");
+        ?
+        res.status(500).send("User not created") :
+        res.status(200).send("user-created");
     });
   });
 });

@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,7 +12,7 @@ a {
   color: black;
 }
 
-/* ANIMATION OF CO-----LAB */
+/* START ANIMATION OF CO-LAB */
 
 /*Vertical Sliding*/
 .slidingVertical {
@@ -158,5 +157,6 @@ a {
   }
 }
 
+/* END ANIMATION OF CO-LAB */
 
 /*# sourceMappingURL=style.css.map */
