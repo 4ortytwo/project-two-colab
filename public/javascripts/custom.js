@@ -37,18 +37,19 @@
 // fadeOut(el);
 // fadeIn(el);
 // fadeIn(el, "inline-block");
-
+//add textarea autoresize
 $(document).ready(function () {
     // fade animation
-    var steps = ["#step-one", "#step-two"]
-    var currentStep = 0
-    $("#signup").click(() => {
-        if (currentStep == steps.length - 1) {
-            $(steps[currentStep]).fadeOut()
-            $(steps[currentStep + 1]).fadeIn()
-            currentStep++
-        } else {}
-    })
+    $('div.hidden').fadeIn(1000).removeClass('hidden');
+    // var steps = ["#step-one", "#step-two"]
+    // var currentStep = 0
+    // $("#signup").click(() => {
+    //     if (currentStep == steps.length - 1) {
+    //         $(steps[currentStep]).fadeOut()
+    //         $(steps[currentStep + 1]).fadeIn()
+    //         currentStep++
+    //     } else {}
+    // })
 
     // $(".singup-form").on("submit", function (e) {
     //     e.preventDefault();

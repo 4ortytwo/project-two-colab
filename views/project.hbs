@@ -1,6 +1,13 @@
-<h1>{{project.projectName}}</h1>
-<h2>Created by:
-    <a href='/auth/profile/{{project.createdBy.id}}'>{{project.createdBy.firstName}} {{project.createdBy.lastName}}</a>
-</h2>
-<p>{{project.description}}</p>
-<p>Due <span>{{project.deadlineFormatted}}</span></p>
+{{> nav}}
+<div class="space"></div>
+<div class="project-container">
+    <div class="project">
+        <h1>{{project.projectName}}</h1>
+        <p>Due <span>{{project.deadlineFormatted}}</span></p>
+        <h4 class="created-by">created by:
+            <a href='/auth/profile/{{project.createdBy.id}}'>{{project.createdBy.firstName}}
+                {{project.createdBy.lastName}}</a>
+        </h4>
+        <p>{{project.description}}</p>
+    </div>
+</div>
