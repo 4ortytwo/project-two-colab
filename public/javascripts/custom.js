@@ -40,7 +40,24 @@
 //add textarea autoresize
 $(document).ready(function () {
     // fade animation
+    $('textarea').autoResize({
+        animate: {
+            enabled: true,
+            duration: 'fast',
+            complete: function () {
+                // Do something
+            },
+            step: function (now, fx) {
+                // Do something else
+            }
+        },
+        maxHeight: '500px'
+    });
     $('div.hidden').fadeIn(1000).removeClass('hidden');
+
+    // START CUSTOM COPIED CODE 
+
+
     // var steps = ["#step-one", "#step-two"]
     // var currentStep = 0
     // $("#signup").click(() => {
