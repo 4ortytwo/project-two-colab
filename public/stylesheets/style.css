@@ -153,6 +153,11 @@ a:visited {
 
 .project p {
   margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.created-by {
+  padding-top: 1%;
 }
 
 /* .project:nth-of-type(even) {

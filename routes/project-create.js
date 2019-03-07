@@ -20,7 +20,7 @@ router.post('/', (req, res, next) => {
         description: req.body.description,
         createdBy: mongoose.Types.ObjectId(req.signedCookies.id),
         deadline: req.body.deadline,
-        skills: req.body.skills
+        skills: req.body.skills //.toLowerCase()
     }).save().then(newProject => {
 
         User.findByIdAndUpdate(
