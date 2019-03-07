@@ -1,16 +1,163 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Gill sans", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #43b4d6;
+#main-div {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1484992379169-f4ffcae454ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1774&q=80') center no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+}
+
+.login-basic {
+  text-align: center;
+  /* display: flex; */
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+#colab-container {
+  position: relative;
+  left: -30%;
 }
 
 .colab-main {
   text-align: center;
-  font-size: 10em;
+  font-size: 20em;
   color: black;
+  cursor: default;
 }
+
+.sentence {
+  text-align: center;
+  font-size: 15em;
+  font-family: 'Cocogoose Classic', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  cursor: default;
+  position: relative;
+  left: -10%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* START NAVBAR */
+#navbar {
+  background-color: transparent;
+  color: black;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+#nav-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+#home {
+  margin-left: 10px;
+}
+
+#menu {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+#home,
+#menu a {
+  padding: 10px 20px;
+  position: relative;
+}
+
+#home>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#home>a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+#menu>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#menu>a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* END NAV */
+
+
+/* PROJECTS */
+
+.rows-container {
+  padding: 0 20vw;
+}
+
+.project {
+  margin: 5% 0;
+  border: 1px solid #cfcfcf;
+  padding: 10px;
+}
+
+.project h1 {
+  font-family: 'Cocogoose Classic',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.project p {
+  margin-bottom: 5%;
+}
+
+/* .project:nth-of-type(even) {
+  background-color: grey;
+} */
 
 /* START ANIMATION OF CO-LAB */
 
@@ -21,9 +168,12 @@ a {
 }
 
 .slidingVertical span {
-  animation: topToBottom 12.5s linear infinite 0s;
+  /* animation: topToBottom 12.5s linear infinite 0s;
   -ms-animation: topToBottom 12.5s linear infinite 0s;
-  -webkit-animation: topToBottom 12.5s linear infinite 0s;
+  -webkit-animation: topToBottom 12.5s linear infinite 0s; */
+  animation: rotateWord 15s linear infinite 0s;
+  -ms-animation: rotateWord 15s linear infinite 0s;
+  -webkit-animation: rotateWord 15s linear infinite 0s;
   color: black;
   opacity: 0;
   overflow: hidden;
@@ -31,30 +181,65 @@ a {
 }
 
 .slidingVertical span:nth-child(2) {
-  animation-delay: 2.5s;
-  -ms-animation-delay: 2.5s;
-  -webkit-animation-delay: 2.5s;
+  animation-delay: 3s;
+  -ms-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
 }
 
 .slidingVertical span:nth-child(3) {
-  animation-delay: 5s;
-  -ms-animation-delay: 5s;
-  -webkit-animation-delay: 5s;
+  animation-delay: 6s;
+  -ms-animation-delay: 6s;
+  -webkit-animation-delay: 6s;
 }
 
 .slidingVertical span:nth-child(4) {
-  animation-delay: 7.5s;
-  -ms-animation-delay: 7.5s;
-  -webkit-animation-delay: 7.5s;
+  animation-delay: 9s;
+  -ms-animation-delay: 9s;
+  -webkit-animation-delay: 9s;
 }
 
 .slidingVertical span:nth-child(5) {
-  animation-delay: 10s;
-  -ms-animation-delay: 10s;
-  -webkit-animation-delay: 10s;
+  animation-delay: 12s;
+  -ms-animation-delay: 12s;
+  -webkit-animation-delay: 12s;
 }
 
 /*topToBottom Animation*/
+
+@keyframes rotateWord {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  5% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  17% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  20% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @-moz-keyframes topToBottom {
   0% {
     opacity: 0;
@@ -159,4 +344,298 @@ a {
 
 /* END ANIMATION OF CO-LAB */
 
+/* START SIGNUP/LOGIN FORM */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* START SELECT dropdown */
+.role {
+  /* margin: 0 auto; */
+  -webkit-appearance: none;
+  background-color: white;
+  padding: 3% 35%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: unset;
+}
+
+/* END SELECT dropdown */
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.tip {
+  font-size: 20px;
+  margin: 40px auto 50px;
+  text-align: center;
+}
+
+.cont {
+  overflow: hidden;
+  position: relative;
+  width: 900px;
+  height: 550px;
+  margin: 0 auto 100px;
+  background: #fff;
+}
+
+.form {
+  position: relative;
+  width: 640px;
+  height: 100%;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  padding: 50px 30px 0;
+}
+
+.sub-cont {
+  overflow: hidden;
+  position: absolute;
+  left: 640px;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  padding-left: 260px;
+  background: #fff;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.cont.s--signup .sub-cont {
+  -webkit-transform: translate3d(-640px, 0, 0);
+  transform: translate3d(-640px, 0, 0);
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img {
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  padding-top: 360px;
+}
+
+.img:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1518685101044-3b5a4e7580a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80");
+  background-size: cover;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.cont.s--signup .img:before {
+  -webkit-transform: translate3d(640px, 0, 0);
+  transform: translate3d(640px, 0, 0);
+}
+
+.img__text {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img__text h2 {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.img__text p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cont.s--signup .img__text.m--up {
+  -webkit-transform: translateX(520px);
+  transform: translateX(520px);
+}
+
+.img__text.m--in {
+  -webkit-transform: translateX(-520px);
+  transform: translateX(-520px);
+}
+
+.cont.s--signup .img__text.m--in {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.img__btn {
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  width: 100px;
+  height: 36px;
+  margin: 0 auto;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img__btn:after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+
+.img__btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: -webkit-transform 1.2s;
+  transition: transform 1.2s;
+  transition: transform 1.2s, -webkit-transform 1.2s;
+}
+
+.img__btn span.m--in {
+  -webkit-transform: translateY(-72px);
+  transform: translateY(-72px);
+}
+
+.cont.s--signup .img__btn span.m--in {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.cont.s--signup .img__btn span.m--up {
+  -webkit-transform: translateY(72px);
+  transform: translateY(72px);
+}
+
+h2 {
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  width: 260px;
+  margin: 25px auto 0;
+  text-align: center;
+}
+
+label span {
+  font-size: 12px;
+  color: #cfcfcf;
+  text-transform: uppercase;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.forgot-pass {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #cfcfcf;
+}
+
+.submit {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: #d4af7a;
+  text-transform: uppercase;
+}
+
+.fb-btn {
+  border: 2px solid #d3dae9;
+  color: #8fa1c7;
+}
+
+.fb-btn span {
+  font-weight: bold;
+  color: #455a81;
+}
+
+.sign-in {
+  transition-timing-function: ease-out;
+}
+
+.cont.s--signup .sign-in {
+  transition-timing-function: ease-in-out;
+  transition-duration: 1.2s;
+  -webkit-transform: translate3d(640px, 0, 0);
+  transform: translate3d(640px, 0, 0);
+}
+
+.sign-up {
+  -webkit-transform: translate3d(-900px, 0, 0);
+  transform: translate3d(-900px, 0, 0);
+}
+
+.cont.s--signup .sign-up {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* END SIGNUP/LOGIN FORM */
 /*# sourceMappingURL=style.css.map */

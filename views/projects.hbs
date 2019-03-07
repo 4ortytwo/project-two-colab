@@ -1,9 +1,11 @@
-{{#each projects}}
-<div>
-    <h1><a href="/projects/{{id}}">{{projectName}}</a></h1>
-    <p>{{description}}</p>
-    <h2>CREATED BY: <a href='/auth/profile/{{createdBy.id}}'>{{createdBy.firstName}}</a></h2>
-    <h3>Due {{deadlineFormatted}}</h3>
+<div class='rows-container'>
+    {{#each projects}}
+    <div class='project'>
+        <h1><a href="/projects/{{id}}">{{projectName}}</a></h1>
+        <i class="far fa-clock"></i> <span>Due {{deadlineFormatted}}</span>
+        <p>{{description}}</p>
+        <span>{{skills}}</span>
+        <h4>CREATED BY: <a href='/auth/profile/{{createdBy.id}}'>{{createdBy.firstName}}</a></h4>
+    </div>
+    {{/each}}
 </div>
-<br><br>
-{{/each}}

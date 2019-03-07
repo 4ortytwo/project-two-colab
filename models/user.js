@@ -8,7 +8,7 @@ const userSchema = new Schema({
     firstName: String,
     lastName: String,
     fullName: String,
-    specialty: String,
+    role: String,
     dateOfBirth: Date, //FIXME: trim the date
     pictureUrl: String,
     projects: [{

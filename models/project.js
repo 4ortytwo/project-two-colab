@@ -10,6 +10,7 @@ const projectSchema = new Schema({
         ref: 'users'
     },
     deadline: Date,
+    skills: String,
     createdAt: {
         type: Date,
         default: Date.now

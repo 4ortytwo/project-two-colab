@@ -19,7 +19,8 @@ router.post('/', (req, res, next) => {
         projectName: req.body.projectName,
         description: req.body.description,
         createdBy: mongoose.Types.ObjectId(req.signedCookies.id),
-        deadline: req.body.deadline
+        deadline: req.body.deadline,
+        skills: req.body.skills
     }).save().then(newProject => {
 
         User.findByIdAndUpdate(

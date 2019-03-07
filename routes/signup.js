@@ -15,10 +15,9 @@ router.post("/", (req, res) => {
     email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    specialty: req.body.specialty,
+    role: req.body.role,
     dateOfBirth: req.body.dateOfBirth,
     pictureUrl: req.body.pictureUrl,
-    specialty: req.body.specialty
   };
 
   bcrypt.hash(req.body.password, 10, function (err, hash) {

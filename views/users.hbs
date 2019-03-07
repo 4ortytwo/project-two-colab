@@ -1,13 +1,15 @@
-{{#each users}}
-<h1>
-    <a href="/auth/profile/{{id}}">{{firstName}} {{lastName}}</a>
-</h1>
+<div class='flex-container'>
+    {{#each users}}
+    <h1>
+        <a href="/auth/profile/{{id}}">{{firstName}} {{lastName}}</a>
+    </h1>
 
-<h2>{{specialty}}</h2>
+    <h2>{{role}}</h2>
 
 
-{{#if pictureUrl}}
-<img src="{{pictureUrl}}" alt="{{firstName}}'s profile picture">
-{{/if}}
-<br><br>
-{{/each}}
+    {{#if pictureUrl}}
+    <img src="{{pictureUrl}}" alt="{{firstName}}'s profile picture">
+    {{/if}}
+    <br><br>
+    {{/each}}
+</div>
