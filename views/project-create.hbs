@@ -3,13 +3,24 @@
 <div class='form-div'>
 
     <form action="/project-create" method="POST">
-        <h1>Tell us a little bit more about it.</h1>
-        <span>Name your project</span><input type="text" name='projectName' placeholder="name your project"
-            autocomplete="off" required>
-        <label><span>Deadline:</span><input type="date" name="deadline" id="deadline"></label>
-        <span></span><textarea type="text" name="description" placeholder="describe your project" class='description'
+        <h1 class="projectForm-title">Tell us a little bit more about it.</h1>
+
+        <div class="name-section-project">
+            <span>Name your project</span>
+            <input type="text" name='projectName' placeholder="name your project" autocomplete="off" required>
+        </div>
+        <div class="deadline-section-project">
+            <label><span>Deadline:</span>
+                <input type="date" name="deadline" id="deadline"></label>
+        </div>
+
+        <textarea type="text" name="description" placeholder="describe your project" class='description-project'
             required></textarea>
-        <input type="text" name="skills" placeholder="Required skills">
+        <div>
+            <input type="text" name="skills" placeholder="Required skills" class="skills-project">
+        </div>
+
+
         <button type="submit" class="my-button">post the lab</button>
     </form>
 </div>
